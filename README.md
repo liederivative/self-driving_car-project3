@@ -97,19 +97,25 @@ The model includes RELU layers to introduce nonlinearity (```model.py``` line 83
 I used the images provided by Udacity, and new data was generated using augmentation. 
 
 To augment the data set, I flipped images and angles thinking that this would balance the angles values , due to the data has a bias to zeros ,which is the most frequent driving behaviour of the track 1. Below are some examples of the augmentation applied. (augmentation functions are in ``` utils.py ``` line 55-137 )
-
+----------
 original image
 ![enter image description here](https://drive.google.com/uc?id=0B3Ji5KWByh0gQ0RPc3owOWRnaW8)
+----------
 modified brightness
 ![enter image description here](https://drive.google.com/uc?id=0B3Ji5KWByh0gcVVuMXV4UGtVM2M)
+----------
 sheared image
 ![enter image description here](https://drive.google.com/uc?id=0B3Ji5KWByh0gYm9VTW1tNFRia28)
+----------
 image in HSV coordinates
 ![enter image description here](https://drive.google.com/uc?id=0B3Ji5KWByh0gb05tc2Jadkh0Qk0)
+----------
 flipped image
 ![enter image description here](https://drive.google.com/uc?id=0B3Ji5KWByh0gbkRvWnJrTEl3RU0)
+----------
 rotated image 
 ![enter image description here](https://drive.google.com/uc?id=0B3Ji5KWByh0gM25DbjhRVWVyUXc)
+----------
 
 The images are the resize to 16x32 and used as input in the model. All the images for the training set are generated using a random selection of the camera position (centre, left, right), with equal probabilities. The same is applied for the augmentation with the exception of shearing that is implemented with a probability of 80% (```utils.py``` line 98) , higher than the others. More stability was presented with higher likelihood of shearing. The angles are modified according to its augmentation. 
 
